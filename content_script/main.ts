@@ -3,9 +3,6 @@ import {
   getCurrentChatDetails,
   navigateToChat,
   onOpenPopup,
-  onPullFileNameFromExcalidraw,
-  onPushExcalidrawFile,
-  onPushFileNameToExcalidraw,
 } from "./onMessageHandlers";
 
 const registerEventListeners = () => {
@@ -28,20 +25,6 @@ const registerEventListeners = () => {
         }
         case MessageTypes.NAVIGATE_TO_CHAT: {
           navigateToChat(message.body?.chatUrl as string);
-          return true;
-        }
-        case MessageTypes.PUSH_EXCALIDRAW_FILE: {
-          onPushExcalidrawFile(message.body?.excalidraw as string);
-          return true;
-        }
-        case MessageTypes.PUSH_CURRENT_WORKING_FILE_NAME: {
-          onPushFileNameToExcalidraw(message.body?.fileName as string);
-          return true;
-        }
-        case MessageTypes.PULL_CURRENT_WORKING_FILE_NAME: {
-          onPullFileNameFromExcalidraw().then((fileName) => {
-            sendResponse(fileName);
-          });
           return true;
         }
         default:
