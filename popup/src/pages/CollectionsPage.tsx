@@ -115,7 +115,21 @@ const CollectionsPage = () => {
       >
         {getFilteredCollection(collections, urlType).length === 0 ? (
           <Text size="1" weight="medium" style={{ textAlign: "center" }}>
-            <Em>Nothing to show</Em>
+            <Flex gapX="1" align="center" direction={"row"} justify={"center"}>
+              <Em>Click above</Em>
+              <DotsHorizontalIcon
+                style={{
+                  backgroundColor: "#ffff",
+                  borderRadius: 10,
+                  padding: 1,
+                  border: `0.5px solid ${themeColor}`,
+                }}
+                color={themeColor}
+                height={12}
+                width={12}
+              />
+              <Em>to create New Collection</Em>
+            </Flex>
           </Text>
         ) : (
           <>

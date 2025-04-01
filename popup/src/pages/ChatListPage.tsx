@@ -165,7 +165,16 @@ const ChatListPage = () => {
       >
         {getChatList().length === 0 ? (
           <Text size="1" weight="medium" style={{ textAlign: "center" }}>
-            <Em>Nothing to show</Em>
+            <Flex gapX="1" align="center" direction={"row"} justify={"center"}>
+              <Em>Click above</Em>
+              <CaretDownIcon
+                style={{ backgroundColor: "#E3E3E8", borderRadius: 10 }}
+                height={12}
+                width={12}
+              />
+              <Em>to Save Current Chat</Em>
+            </Flex>
+            <Em>(Make sure to open a chat.)</Em>
           </Text>
         ) : (
           <>
